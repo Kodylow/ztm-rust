@@ -10,16 +10,26 @@
 // * Use a match expression to determine which color
 //   name to print
 
+enum Colors {
+    Red,
+    Blue,
+    Green
+    
+}
+
 fn main() {
 
-    enum Colors {
-        Red
-    }
+    let color = Colors::Red;
+    let ocolor = Colors::Green;
+    let finalcolor = Colors::Blue;
 
-    let color: Colors;
-    color = Colors::Red;
+    let a = [color, ocolor, finalcolor];
 
-    match color {
-        Colors::Red => println!("red"),
-    }
+    for i in a {
+        match i {
+            Colors::Red => println!("red"),
+            Colors::Blue => println!("blue"),
+            Colors::Green => println!("green")
+        };
+    };
 }
