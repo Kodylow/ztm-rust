@@ -12,4 +12,20 @@
 // * Use a match expression to determine which message
 //   to print
 
-fn main() {}
+use std::cmp::Ordering;
+
+fn print_more(x: i32) {
+    println!("{:?} is greater than or equal to 100", x);
+}
+
+fn print_less(x: i32) {
+    println!("{:?} is less than 100", x)
+}
+
+fn main() {
+    let x = 80;
+    match x.cmp(&100) {
+        Ordering::Less => print_less(x),
+        _ => print_more(x)
+    }
+}
